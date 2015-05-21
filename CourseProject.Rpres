@@ -1,0 +1,44 @@
+Developing Data Products: Course Project
+========================================================
+author: SRosen
+date: 5/24/15
+font-family: 'Helvetica'
+transition: rotate
+
+Application Description
+========================================================
+
+To demonstrate facility with **shiny**, I published an application that makes it easy to explore US Personal Expenditure Data by the user's category of choice.
+
+The application can be accessed through [this link](http://srosen.shinyapps.io/personal_expenditure/).
+
+Application Instructions
+========================================================
+
+Select your category of choice using the **category** dropdown. The app then displays expenditures (in billions of dollars) in that category for the years 1940, 1945, 1950, 1955, and 1960.
+
+The categories are as follows:
+- food and tobacco
+- household operation
+- medical and health
+- personal care
+- private education
+
+Dataset
+========================================================
+Data is from The World Almanac and Book of Facts, 1962, page 756.
+
+Here is the structure of the 5 by 5 matrix:
+```{r}
+str(USPersonalExpenditure)
+```
+
+
+Aggregation Function
+========================================================
+
+Here is some sample code to calculate the total expenditures per year (in billions of dollars):
+```{r}
+library(datasets)
+signif(colSums(USPersonalExpenditure),2)
+```
